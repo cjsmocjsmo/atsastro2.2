@@ -1,0 +1,73 @@
+---
+// import { Image } from '@astrojs/image/components';
+
+import Layout from '../../layouts/Layout.astro';
+import LandscapeList from '../../json/landscapelist.json';
+import PortraitList from '../../json/portraitlist.json';
+import BackArrow from '../../components/BackArrow.astro';
+import PhotoList from '../../components/PhotoList.astro';
+
+---
+
+<Layout title="AlphaTree">
+	<main>
+		<BackArrow href="/" />
+		<center>
+			<h1><span class="text-gradient">360 516 8933</span></h1>
+		</center>
+		<div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-2.5">
+			{LandscapeList.landscape.map((item) => (
+				<PhotoList file={item.file} pic={item.pic} thumb={item.thumb} />
+				// <div class="">
+				// 	<a href={item.file} ><img class="rounded-lg" src={item.thumb} alt="AlphaTree Image"/></a>
+				// </div>
+			))}
+		</div>
+
+		<div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-2.5 mt-3">
+			{PortraitList.portrait.map((item) => (
+				<PhotoList file={item.file} pic={item.pic} thumb={item.thumb} />
+				// <div>
+				// 	<img class="rounded-lg" src={item.thumb} alt="AlphaTree Image"/>
+				// </div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 90ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+</style>

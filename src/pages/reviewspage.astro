@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeftArrow from '../components/LeftArrow.astro';
+import FiveStars from '../components/FiveStars.astro';
+---
+
+<Layout title="AlphaTree">
+	<main class="m-auto p-4 max-w-5xl">
+		<LeftArrow url="/" />
+
+		 <p class="text-center text-4xl mb-10">Our customers say it best</p>
+
+		<ul role="list" class="link-card-grid">
+			<div class="mx-auto block box-content h-fit w-9/12 p-4 border-2 border-red-800 mb-5 rounded-lg bg-sky-600 italic">
+				<FiveStars />
+				<p class="text-black">Very responsive and easy to communicate with. Curtis and crew showed up when scheduled. 
+					Very knowledgeable and professional. Mike did a great job in the tree and zip lined the branches perfectly with 
+					Curtis directing. Although he did get bit by the large thorns in the Locust tree. Would definitely recommend them 
+					to anyone looking to get problem trees down safely.
+				</p>
+				<p class="float-right text-black mb-2">- Scott Mason</p>
+				<br>
+			</div>
+		</ul>
+
+		<ul role="list" class="link-card-grid">
+			<div class="mx-auto block box-content h-fit w-9/12 p-4 border-2 border-red-800 mb-5 rounded-lg bg-sky-600 italic">
+				<FiveStars />
+				<p class="text-black">I contacted Curtis about removing several, dangerous trees on my property.  He 
+					showed up on time and ready to work. He did exactly what I expected him to do. He does exceptional 
+					work. I will continue to call Curtis when I need a tree removed. I would highly recommend AlphaTree.
+				</p>
+				<p class="float-right text-black mb-2">- Dan do1058</p>
+				<br>
+			</div>
+		</ul>
+
+		<ul role="list" class="link-card-grid">
+			<div class="mx-auto block box-content h-fit w-9/12 p-4 border-2 border-red-800 mb-5 rounded-lg bg-sky-600 italic">
+				<FiveStars />
+				<p class="text-black">Curtis and crew took down an 80 foot fir near a fence and house. NO DAMAGE!!!  
+					Cleanup was thorough and they cut the rounds into 14 inch rounds for later splitting. Crew had a 
+					great attitude. Will use them again.
+				</p>
+				<p class="float-right text-black mb-2">- Kurt R</p>
+				<br>
+			</div>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	
+
+	/* main {
+		margin: auto;
+		padding: 1em;
+		max-width: 90ch;
+	} */
+
+	
+</style>
+		

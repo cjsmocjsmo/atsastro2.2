@@ -1,0 +1,112 @@
+---
+
+import Layout from '../../layouts/Layout.astro';
+import BackArrow from '../../components/BackArrow.astro';
+import VidCard from '../../components/VidCard.astro';
+// const BigCedarTreeRemoval = 'https://atsimages.xyz/images/webp/BigCedarTreeRemoval.webp';
+// const BigTreeTopRemoval = 'https://atsimages.xyz/images/webp/BigTreeTopRemoval.webp';
+// const DouglasFirRemoval = "https://atsimages.xyz/images/webp/DouglasFirRemoval.webp";
+// const DyingWhitePineRemoval = "https://atsimages.xyz/images/webp/DyingWhitePineRemoval.webp";
+// const JustGettingStarted = "https://atsimages.xyz/images/webp/JustGettingStarted.webp";
+// const MakeItSnow = "https://atsimages.xyz/images/webp/MakeItSnow.webp";
+// const SnowBoundHemlock = "https://atsimages.xyz/images/webp/SnowBoundHemlock.webp";
+// const TightSpaces = "https://atsimages.xyz/images/webp/tight_spaces.webp";
+// const WeCutTrees = "https://atsimages.xyz/images/webp/we_cut_trees.webp";
+// const WindDamagedCedar = "https://atsimages.xyz/images/webp/WindDamagedCedar.webp";
+
+import BigCedarTreeRemoval from "../../images/vidthumbs/BigCedarTreeRemoval.avif"
+import BigTreeTopRemoval from "../../images/vidthumbs/BigTreeTopRemoval.avif"
+import DouglasFirRemoval from "../../images/vidthumbs/DouglasFirRemoval.avif"
+import DyingWhitePineRemoval from "../../images/vidthumbs/DyingWhitePineRemoval.avif"
+import JustGettingStarted from "../../images/vidthumbs/JustGettingStarted.avif"
+import MakeItSnow from "../../images/vidthumbs/MakeItSnow.avif"
+import SnowBoundHemlock from "../../images/vidthumbs/SnowBoundHemlock.avif"
+import TightSpaces from "../../images/vidthumbs/tight_spaces.avif"
+import WeCutTrees from "../../images/vidthumbs/we_cut_trees.avif"
+import WindDamagedCedar from "../../images/vidthumbs/WindDamagedCedar.avif"
+---
+
+<!-- https://img.youtube.com/vi/IZQymhYK59k/maxresdefault.jpg -->
+
+<Layout title="AlphaTree">
+	<main>
+		<BackArrow href="/" />
+		<center>
+			<h1><span class="text-gradient">360 516 8933</span></h1>
+		</center>
+
+		<div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-2.5">
+			<VidCard link="/vid/bigcedartreeremovalpage" src={BigCedarTreeRemoval} vidtext="Big Cedar Tree Removal" />
+			<VidCard link="/vid/bigtreetopremovalpage" src={BigTreeTopRemoval} vidtext="Big Tree Top Removal" />
+			<VidCard link="/vid/douglasfirremovalpage" src={DouglasFirRemoval} vidtext="Douglas Fir Removal" />
+			<VidCard link="/vid/dyingwhitepineremovalpage" src={DyingWhitePineRemoval} vidtext="Dying White Pine Removal" />
+			<VidCard link="/vid/justgettingstartedpage" src={JustGettingStarted} vidtext="Just Getting Started" />
+			<VidCard link="/vid/makeitsnowpage" src={MakeItSnow} vidtext="Make It Snow" />
+			<VidCard link="/vid/snowboundhemlockpage" src={SnowBoundHemlock} vidtext="Snow Bound Hemlock" />
+			<VidCard link="/vid/wecuttreespage"  src={WeCutTrees} vidtext="We Cut Trees" />
+			<VidCard link="/vid/winddamagedcedarpage" src={WindDamagedCedar} vidtext="Wind Damaged Cedar" />
+			<VidCard link="/vid/tightspacespage" src={TightSpaces} vidtext="Tight Spaces" />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 90ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		border: 0.1em solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.15em 0.25em;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
+		

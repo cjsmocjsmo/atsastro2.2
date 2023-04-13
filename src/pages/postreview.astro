@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeftArrow from "../components/LeftArrow.astro";
+---
+
+<Layout title="AlphaTree">
+	<main class="m-auto p-8 max-w-5xl">
+		<LeftArrow url="/" />
+
+		<form class="mx-auto" action="" method="get">
+
+			<div class="flex flex-row">
+				<div class="basis-1/2 pr-1">
+					<div class="flex flex-col">
+						<label for="Name">Name:</label>
+
+						<input
+							id="Name"
+							class="input[type='text'] text-white bg-slate-600 rounded-lg h-12 w-full"
+							type="text"
+							name="InputName"
+							placeholder="Herman Munster"
+						/>
+					</div>
+				</div>
+
+				<div class="basis-1/2 pr-1">
+					<div class="flex flex-col">
+						<label for="Email">Email:</label>
+
+						<input
+							id="Email"
+							class="input[type='text'] text-white bg-slate-600 rounded-lg h-12 w-full"
+							type="text"
+							name="Email"
+							placeholder="herman@gmail.com"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<br /><br />
+
+			<center><label for="Review">Review:</label></center>
+			<center>
+				<textarea
+					id="Review"
+					class="text-white bg-slate-600 h-36 rounded-lg h-12 w-9/12"
+					name="Review"></textarea>
+			</center>
+
+			<br /><br />
+
+			<div class="basis-1/2 pr-1">
+				<div class="flex flex-col">
+					<center><label for="Review">Star Rating:</label></center>
+					<center>
+						<input
+							id="Star"
+							class="input[type='text'] text-justify text-white bg-slate-600 rounded-lg h-12 w-20"
+							type="text"
+							name="Star"
+							placeholder="5"
+						/>
+					</center>
+				</div>
+			</div>
+
+			<br /><br />
+
+			<center>
+				<button
+					id="revsub"
+					class="bg-slate-600 h-14 w-44 text-white rounded-lg"
+					type="button"
+				>
+					Submit
+				</button>
+			</center>
+		</form>
+	</main>
+</Layout>
+
+<script>
+	const rawname = document.querySelector('input[name="InputName"]');
+	const rawemail = document.querySelector('input[name="Email"]');
+	const rawreview = document.getElementById("Review");
+	const starz = document.querySelector('input[name="Star"]');
+	const button = document.querySelector("button#revsub");
+	button.addEventListener("click", () => {
+		let name = rawname.value.replace(/ /g, "SPACE");
+		let areplace = rawemail.value.replace("@", "AT");
+		let email = areplace.replace(/\./g, "DOT");
+		let review = rawreview.value.replace(/ /g, "SPACE");
+		let star = starz.value;
+
+		const queryStr =
+			"entry=" +
+			name +
+			"SPLIT" +
+			email +
+			"SPLIT" +
+			review +
+			"SPLIT" +
+			star;
+
+		const u1 = "https://atsdo.xyz/ins_rev?" + queryStr;
+		// const u1 = "https://192.168.0.91:8080/ins_rev?" + queryStr; // for testing
+		const url = encodeURI(u1);
+		fetch(url);
+
+		rawname.value = "";
+		rawemail.value = "";
+		rawreview.value = "";
+		starz.value = "";
+
+		window.location.href = "/thanks";
+	});
+</script>
+
+<!-- <style>
+	:root {
+		--astro-gradient: linear-gradient(180deg, #4f39fa, white);
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+</style> -->

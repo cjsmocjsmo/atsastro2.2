@@ -1,0 +1,18 @@
+---
+const { link, src, vidtext } = Astro.props;
+---
+
+<ul>
+    <li>
+        <a href={link}>
+            <img class="rounded-lg" src={src} />
+        </a>
+    </li>
+    <center>
+        <li class="text-blue-500">
+            <a href={link}>
+                {vidtext}
+            </a>
+        </li>
+    </center>
+</ul>

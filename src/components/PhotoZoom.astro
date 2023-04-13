@@ -1,0 +1,34 @@
+---
+const { pic, cat } = Astro.props;
+
+let lands = true;
+if (cat === "land") {
+    lands = true;
+} else {
+    lands = false;
+}
+---
+
+<div>
+    {
+        lands ? (
+            <center>
+                <img
+                    width="800"
+                    class="mt-10 border-2 border-black rounded-lg"
+                    src={pic}
+                    alt="AlphaTree Service"
+                />
+            </center>
+        ) : (
+            <center>
+                <img
+                    width="550"
+                    class="mt-10 border-2 border-black rounded-lg"
+                    src={pic}
+                    alt="AlphaTree Service"
+                />
+            </center>
+        )
+    }
+</div>

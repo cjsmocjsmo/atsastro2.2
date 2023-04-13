@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeftArrow from '../components/LeftArrow.astro';
+---
+
+<Layout title="AlphaTree">
+	<main class="m-auto p-8 max-w-5xl">
+		<LeftArrow url="/" />
+		<h1 class="text-center m-8 text-gradient">360 516 8933</h1>
+        <p class="text-center">Coming soon.</p>
+        <p class="text-center">This feature has not been implemented yet.</p>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #301fb1, #6f94da);
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+</style>
+		

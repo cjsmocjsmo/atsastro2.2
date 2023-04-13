@@ -1,0 +1,268 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeftArrow from "../components/LeftArrow.astro";
+---
+
+<Layout title="AlphaTree">
+	<main class="m-auto p-8 max-w-5xl">
+		<LeftArrow url="/" />
+
+		<p class="text-center text-white">Thank you for choosing AlphaTree Service.</p>
+		<p class="text-center text-white m-5">Please provide your contact information.</p>
+		
+
+		<form class="mx-auto" action="" method="get">
+			<center><label for="estiname">Name:</label></center>
+			<input
+				class="text-white input[type='text'] bg-slate-600 rounded-lg h-8 w-full"
+				type="text"
+				id="estiname"
+				name="estiname"
+				placeholder="Herman Munster"
+			/>
+
+			<div class="flex flex-row">
+				<div class="basis-1/2 pr-1">
+					<div class="flex flex-col">
+						<label for="estiaddress">Address:</label>
+						<input
+							class="text-white input[type='text'] bg-slate-600 rounded-lg h-8 w-full"
+							type="text"
+							id="estiaddress"
+							name="estiaddress"
+							placeholder="1313 Mockingbird Ln"
+						/>
+					</div>
+				</div>
+
+				<div class="basis-1/2 pr-1">
+					<div class="flex flex-col">
+						<label for="esticity">City:</label>
+						<input
+							class="text-white input[type='text'] bg-slate-600 rounded-lg h-8 w-full"
+							type="text"
+							id="esticity"
+							name="esticity"
+							placeholder="Mockingbird Heights"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-row">
+				<div class="basis-1/2 pr-1">
+					<div class="flex flex-col">
+						<label for="estitelephone">Telephone:</label>
+						<input
+							class="text-white input[type='tel'] bg-slate-600 rounded-lg h-8 w-full"
+							type="tel"
+							id="estitelephone"
+							name="estitelephone"
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+							placeholder="505-555-1234"
+						/>
+					</div>
+				</div>
+				<div class="basis-1/2 pl-1">
+					<div class="flex flex-col">
+						<label for="estiemail">Email:</label>
+						<input
+							class="text-white input[type='email'] bg-slate-600 rounded-lg h-8 w-full"
+							type="email"
+							id="estiemail"
+							name="estiemail"
+							placeholder="herman@gmail.com"
+						/>
+					</div>
+				</div>
+			</div>
+			<center
+				><label for="estireqservdate">Date Of Service:</label>
+			</center>
+			<center
+				><input
+					class="text-white bg-slate-600 rounded-lg h-8 w-full"
+					type="date"
+					id="estireqservdate"
+					name="estireqservdate"
+				/>
+			</center>
+
+			<center
+				><label for="esticomment">Describe The Problem:</label>
+			</center>
+			<center>
+				<textarea
+					class="text-white bg-slate-600 h-44 rounded-lg h-10 w-full"
+					id="esticomment"
+					name="esticomment"></textarea>
+			</center><br /><br />
+
+			<!-- <center
+				><label for="estiphoto">Select A Pic/Vid To Upload</label>
+			</center>
+			<center
+				><input
+					class="mt-4 mb-5 text-white bg-slate-600"
+					type="file"
+					id="estiphoto"
+					name="estiphoto"
+				/>
+			</center> -->
+		</form>
+
+		<center>
+			<div>
+				<button
+					class="mt-5 mb-5 bg-slate-600 h-14 w-1/2 text-white rounded-lg"
+					type="button"
+					id="estisub"
+					name="estisub"
+				>
+					Submit
+				</button>
+			</div>
+		</center>
+
+		<center><h1 class="mt-5 mb-5 text-white">-----</h1></center>
+
+		<center>
+			<h3 class="mt-4 mb-5 text-white">
+				If you would like to also upload an image or video to help
+				explain the problem please use the box below.
+			</h3>
+			<form action="https://atsdo.xyz/upload">
+			<!-- <form action="https://192.168.0.91:8080/upload"> -->
+
+				<center>
+					<label for="estiemail">Email:</label>
+					<input
+						class="text-white input[type='email'] bg-slate-600 rounded-lg h-8 w-full"
+						type="email"
+						id="estiemail"
+						name="estiemail"
+						placeholder="herman@gmail.com"
+					/>
+				</center>
+				<center>
+					<label for="estiphoto">Select A Pic/Vid To Upload</label>
+				</center>
+				<center
+					><input
+						class="mb-5 text-white bg-slate-600"
+						type="file"
+						id="estiphoto"
+						name="estiphoto"
+					/>
+				</center>
+			</form>
+			<center>
+				<div>
+					<button
+						class="mt-5 mb-5 bg-slate-600 h-14 w-1/2 text-white rounded-lg"
+						type="submit"
+						id="uploadBtn"
+						name="uploadBtn"
+					>
+						Upload
+					</button>
+				</div>
+			</center>
+		</center>
+	</main>
+</Layout>
+
+<script>
+	const rawname = document.querySelector('input[name="estiname"]');
+
+	const rawaddress = document.querySelector('input[name="estiaddress"]');
+
+	const rawcity = document.getElementById("esticity");
+
+	const rawtelephone = document.querySelector('input[name="estitelephone"]');
+
+	const rawemail = document.querySelector('input[name="estiemail"]');
+
+	const rawestireqservdate = document.querySelector(
+		'input[name="estireqservdate"]'
+	);
+	const rawcomment = document.getElementById("esticomment");
+
+	const rawphoto = document.getElementById("estiphoto");
+
+	const button = document.querySelector("button#estisub");
+
+	button.addEventListener("click", () => {
+		let name = rawname.value.replace(/ /g, "SPACE");
+		let address = rawaddress.value.replace(/ /g, "SPACE");
+		let city = rawcity.value.replace(/ /g, "SPACE");
+		let telephone = rawtelephone.value;
+		let e1 = rawemail.value.replace(/\@/g, "AT");
+		let email = e1.replace(/\./g, "DOT");
+		let estireqservdate = rawestireqservdate.value;
+		let comment = rawcomment.value.replace(/ /g, "SPACE");
+		let photo = rawphoto.value;
+
+		const queryStr =
+			"entry=" +
+			name +
+			"SPLIT" +
+			address +
+			"SPLIT" +
+			city +
+			"SPLIT" +
+			telephone +
+			"SPLIT" +
+			email +
+			"SPLIT" +
+			estireqservdate +
+			"SPLIT" +
+			comment +
+			"SPLIT" +
+			photo;
+
+		const u1 = "https://atsdo.xyz/ins_est?" + queryStr;
+		// const u1 = "https://192.168.0.91:8080/ins_est?" + queryStr; //for testing
+
+		const url = encodeURI(u1);
+		fetch(url);
+
+		rawname.value = "";
+		rawaddress.value = "";
+		rawcity.value = "";
+		rawtelephone.value = "";
+		rawemail.value = "";
+		rawestireqservdate.value = "";
+		rawcomment.value = "";
+		rawphoto.value = "";
+		
+		window.location.href = "/thanks";
+	});
+</script>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+</style>
