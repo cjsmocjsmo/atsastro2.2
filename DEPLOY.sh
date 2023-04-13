@@ -1,13 +1,13 @@
 #!/bin/sh
 
-VERSION="ats-astro-httpd:0.0.1";
+# VERSION="ats-astro2.2-httpd:0.0.1";
 
-docker build -t $VERSION .;
-docker run -d -p 8888:80 $VERSION
+# docker build -t $VERSION .;
+# docker run -d -p 8888:80 $VERSION
 
 ############################################
 
-# VERSION="gcr.io/atsgo-340504/ats-astro-httpd:0.0.1";
+VERSION="gcr.io/atsgo-340504/ats-astro2.2-httpd:0.0.1";
 
-# docker build -t $VERSION .;
-# docker push $VERSION
+docker build -t $VERSION .;
+docker push $VERSION
