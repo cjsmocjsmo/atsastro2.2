@@ -4,6 +4,6 @@
 
 for image in *.webp; do
     convert "$image" -resize 302x604 "$image"
-    convert "$image" "${image%.*}.avif"
+    convert "$image" "${image%.*}.webp"
     # rm "$image";
 done
