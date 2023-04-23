@@ -7,7 +7,7 @@
 
 ############################################
 
-VERSION="gcr.io/atsgo-340504/ats-astro2.2-httpd:0.0.2";
+VERSION="gcr.io/atsgo-340504/ats-astro2.2-httpd:0.0.3";
 
 docker build -t $VERSION .;
 docker push $VERSION
