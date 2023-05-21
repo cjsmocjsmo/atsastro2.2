@@ -7,7 +7,7 @@
 
 ############################################
 
-VERSION="us-central1-docker.pkg.dev/atsgo-340504/ats/ats-astro2.2-httpd:0.0.4";
+VERSION="us-central1-docker.pkg.dev/atsgo-340504/ats/ats-astro2.2-httpd:0.0.6";
 
 docker build -t $VERSION .;
 docker push $VERSION
